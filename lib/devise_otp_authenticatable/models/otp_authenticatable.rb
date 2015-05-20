@@ -28,11 +28,11 @@ module Devise::Models
     end
 
     def otp_provisioning_uri
-      time_based_otp.provisioning_uri(otp_provisioning_identifier)
+      time_based_otp.provisioning_uri(otp_provisioning_identifier) + "&issuer=#{self.class.otp_uri_application || Rails.application.class.parent_name}"
     end
 
     def otp_provisioning_identifier
-      "#{email}/#{self.class.otp_uri_application || Rails.application.class.parent_name}"
+      "#{self.class.otp_uri_application || Rails.application.class.parent_name}:#{email}"
     end
 
 
