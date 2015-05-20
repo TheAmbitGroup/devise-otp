@@ -1,6 +1,10 @@
 en:
   devise:
 
+    sessions:
+      user:
+        signed_in_but_otp: 'Signed In, but Two Factors Authentication not set up.'
+        
     otp:
       submit_token:
         title: 'Check Token'
@@ -16,6 +20,8 @@ en:
         need_to_refresh_credentials: 'We need to check your credentials before you can change these settings.'
         valid_refresh: 'Thank you, your credentials were accepted.'
         invalid_refresh: 'Sorry, you provided the wrong credentials.'
+        user:
+          signed_in: "Thank you, your credentials were accepted."
 
       credentials_refresh:
         title: 'Please enter your password again.'
