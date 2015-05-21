@@ -4,7 +4,7 @@ en:
     sessions:
       user:
         signed_in_but_otp: 'Signed In, but Two Factors Authentication not set up.'
-        
+
     otp:
       submit_token:
         title: 'Check Token'
