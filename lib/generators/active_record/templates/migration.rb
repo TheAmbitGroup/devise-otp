@@ -15,6 +15,11 @@ class DeviseOtpAddTo<%= table_name.camelize %> < ActiveRecord::Migration
     end
     add_index :<%= table_name %>, :otp_session_challenge,  :unique => true
     add_index :<%= table_name %>, :otp_challenge_expires
+    
+    <%= table_name.camelize.singularize %>.all.each do |r|
+      r.send( :generate_otp_auth_secret )
+      r.send( :generate_otp_persistence_seed )
+    end  
   end
   
   def self.down
